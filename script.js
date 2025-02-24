@@ -8,6 +8,14 @@ const colorPicker = document.querySelector("#customColor");
 const gridInput = document.querySelector("#gridSize");
 const blackButton = document.querySelector("#black");
 
+/**
+ * An array representing hexadecimal characters.
+ * Contains numeric values from 0 to 9 and string representations
+ * of uppercase letters from A to F, which together are used
+ * in hexadecimal numeral systems.
+ *
+ * @type {(number|string)[]}
+ */
 const hexCharacters = [
   0,
   1,
@@ -27,8 +35,20 @@ const hexCharacters = [
   "F",
 ];
 
+/**
+ * Retrieves a character from the hexCharacters string based on the provided index.
+ *
+ * @param {number} index - The position in the hexCharacters string to retrieve the character from.
+ * @returns {string} The character at the specified index in the hexCharacters string.
+ */
 const getCharacter = (index) => hexCharacters[index];
 
+/**
+ * Generates a random hexadecimal color code.
+ * The color code is in the format '#RRGGBB', where RR, GG, and BB are hexadecimal values.
+ *
+ * @return {string} A randomly generated hexadecimal color string.
+ */
 function getRandomColor() {
   let color = "#";
   for (let i = 0; i < 6; i++) {
@@ -37,10 +57,20 @@ function getRandomColor() {
   return color;
 }
 
+/**
+ * Creates default 16x16 grid on page load
+ */
 document.addEventListener("DOMContentLoaded", () => {
   createGrid(16);
 });
 
+/**
+ * Creates a grid layout inside the grid container with the specified size.
+ * The grid will be displayed as a flexible square layout with equally sized cells.
+ *
+ * @param {number} size - The number of rows and columns for the grid (e.g., a value of 4 generates a 4x4 grid).
+ * @return {void} This function does not return anything. It modifies the DOM by populating the grid container with cells.
+ */
 function createGrid(size) {
   // Reset the grid
   gridContainer.innerHTML = "";
@@ -61,10 +91,6 @@ function createGrid(size) {
     gridCell.classList.add("gridCell");
     gridCell.style.width = cellSize + "px";
     gridCell.style.height = cellSize + "px";
-
-    gridCell.addEventListener("mouseover", () => {
-      gridCell.style.backgroundColor = "black";
-    });
     gridContainer.appendChild(gridCell);
   }
 }
