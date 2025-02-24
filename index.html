@@ -4,12 +4,33 @@
     <meta charset="UTF-8" />
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="gameTitle">
       <h1>Etch-a-Sketch</h1>
     </div>
-    <div class="sketchContainer"></div>
+
+    <div class="gameContainer">
+      <div class="gridButtons">
+        <h3>GRID CREATION</h3>
+        <p>
+          Enter the size of the grid you would like to create(e.g 50 will equal
+          a 50x50 size grid
+        </p>
+        <input type="text" id="gridSize" placeholder="Grid Size" />
+        <button class="createGrid">Create Grid</button>
+      </div>
+      <div class="toolButtons">
+        <h3>TOOLS</h3>
+        <button class="toolButton" id="black">Black Mode</button>
+        <button class="toolButton" id="rainbow">Rainbow Mode</button>
+        <button class="toolButton" id="custom">Custom Color</button>
+        <input type="color" id="customColor" style="display: none">
+        <button class="toolButton" id="eraser">Eraser</button>
+        <button class="toolButton" id="clear">Clear Grid</button>
+      </div>
+      <div class="gridContainer"></div>
+    </div>
   </body>
 </html>
