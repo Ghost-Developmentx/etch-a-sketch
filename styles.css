@@ -1,0 +1,14 @@
+.gameTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.sketchContainer {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+    height: auto;
+    min-height: 300px;
+    border: black 1px solid;
+    margin: 0 auto;
+}
